@@ -1,0 +1,70 @@
+[project]
+name = "swift-nomads"
+description = "A python library and application for swift access to data hosted on NOMADS"
+readme = {file = "README.md", content-type = "text/markdown"}
+authors = [
+{name="aerorahul", email="aerorahul@noreply.github.com"},
+]
+license = {file = "LICENSE.md"}
+requires-python = ">=3.11, <3.14"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Earth Science",
+    "License :: OSI Approved :: Creative Commons Zero",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Operating System :: OS Independent",
+]
+dynamic = ["version"]
+keywords = ["kerchunk", "zarr", "grib2", "netCDF", "nomads"]
+dependencies = [
+    "kerchunk>=0.2.10",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "pytest-mock>=3.10.0",
+    "pre-commit>=4.3.0",
+    "black>=24.4.2",
+    "isort>=6.0.1",
+    "flake8>=7.1.0",
+    "mypy>=0.991",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/aerorahul/swift-nomads"
+"Bug Reports" = "https://github.com/aerorahul/swift-nomads/issues"
+"Source" = "https://github.com/aerorahul/swift-nomads"
+"Documentation" = "https://github.com/aerorahul/swift-nomads/blob/main/README.md"
+
+[project.scripts]
+# swift-nomads = "swift-nomads.__main__:main"
+
+[build-system]
+requires = ["setuptools>=64.0.0", "setuptools-scm[toml]>=6.2", "wheel"]
+build-backend = "setuptools.build_meta"
+
+# Packaging/setuptools options
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+exclude = ["tests"]
+
+[tool.setuptools.package-data]
+"swiftnomads" = ["static/*", "templates/*"]
+
+[tool.setuptools_scm]
+write_to = "swift-nomads/_version.py"
+write_to_template = '''
+# Do not change! Do not track in version control!
+__version__ = "{version}"
+'''
+parentdir_prefix_version='swiftnomads-'  # get version from GitHub-like tarballs
+fallback_version='v0.0.1'

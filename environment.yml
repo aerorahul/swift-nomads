@@ -1,0 +1,7 @@
+name: swift-nomads
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - kerchunk>=0.2.10
+  - jupyterlab>=4.4.0

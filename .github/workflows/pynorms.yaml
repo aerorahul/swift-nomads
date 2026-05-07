@@ -1,0 +1,17 @@
+name: pynorms
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  norms:
+    runs-on: ubuntu-latest
+    name: Check coding norms with pre-commit
+    strategy:
+      matrix:
+        #python-version: ["3.11", "3.12", "3.13"]
+        python-version: ["3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - uses: pre-commit/action@v3.0.1
