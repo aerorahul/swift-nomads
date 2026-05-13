@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import logging
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Protocol, Union
@@ -23,6 +24,7 @@ from .rtofs import (
     should_refresh_rtofs_reference,
 )
 
+logger = logging.getLogger('swiftnomads.models')
 ModelConfig = Union[GFSConfig, RTOFSConfig]
 
 

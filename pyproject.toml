@@ -6,17 +6,13 @@ authors = [
 {name="aerorahul", email="aerorahul@noreply.github.com"},
 ]
 license = {file = "LICENSE.md"}
-requires-python = ">=3.11, <3.15"
+requires-python = ">=3.11"
 classifiers = [
-    "Development Status :: 4 - Beta",
+    "Development Status :: 2 - Pre-Alpha",
     "Intended Audience :: Science/Research",
     "Topic :: Scientific/Engineering :: Earth Science",
     "License :: OSI Approved :: Creative Commons Zero",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
-    "Programming Language :: Python :: 3.13",
-    "Programming Language :: Python :: 3.14",
     "Operating System :: OS Independent",
 ]
 dynamic = ["version"]

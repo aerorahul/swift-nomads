@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import base64
 import json
+import logging
 from datetime import datetime, timedelta, timezone
 from importlib import metadata
 from pathlib import Path
@@ -9,6 +10,8 @@ from typing import Any, Callable
 
 import fsspec
 import xarray as xr
+
+logger = logging.getLogger('swiftnomads.common')
 
 
 def normalize_forecast_hours(forecast_hours: list[int]) -> list[int]:

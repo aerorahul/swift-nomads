@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import logging
 import re
 from dataclasses import dataclass
 from pathlib import Path
@@ -15,6 +16,8 @@ from .common import (
     open_reference_dataset,
 )
 from .common import should_refresh_reference as _should_refresh_reference
+
+logger = logging.getLogger('swiftnomads.rtofs')
 
 
 @dataclass(frozen=True)
