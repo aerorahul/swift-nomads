@@ -1,6 +1,13 @@
 # swift-nomads
 A python library and application for swift access to data hosted on NOMADS
 
+## API Naming Convention
+Model-specific helper methods use model-prefixed names for readability and clearer adapter mapping.
+
+Examples:
+* GFS: `list_gfs_forecast_hours`, `build_gfs_refs`, `default_gfs_cache_path`, `should_refresh_gfs_reference`, `get_or_build_gfs_refs`
+* RTOFS: `list_rtofs_forecast_hours`, `build_rtofs_refs`, `default_rtofs_cache_path`, `should_refresh_rtofs_reference`, `get_or_build_rtofs_refs`
+
 ## Installation
 
 ### Dependencies
